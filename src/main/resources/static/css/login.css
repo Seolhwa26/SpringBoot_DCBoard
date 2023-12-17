@@ -1,0 +1,127 @@
+#c1 {
+    width: 1100px;
+    height: 675px;
+    margin: auto;
+
+}
+
+.loginform {
+    width: 550px;
+    height: 675px;
+    background-color: white;
+    padding: 30px 20px;
+    float: left;
+}
+
+#left {
+    border-radius: 20px 0 0 20px;
+}
+
+#right {
+    background-color: #B8E5E0;
+    border-radius: 0 20px 20px 0;
+}
+
+#loginlogo {
+    width: 180px;
+    margin: 20px auto;
+    display: block;
+}
+
+h1 {
+    text-align: center;
+    margin: 5px 0;
+    font-weight: bold;
+}
+
+#kakao {
+    border: none;
+    box-shadow: 5px 5px 5px gray;
+    width: 300px;
+    height: 40px;
+    background-color: #FAE100;
+    margin: 40px auto;
+    margin-top: 50px;
+    display: block;
+}
+
+#kakao:hover {
+    background-color: #E9DC03;
+}
+
+h5 {
+    margin-left: 105px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.in {
+    color: black;
+    font-size: 1rem;
+    margin-left: 105px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.in2 {
+    width: 300px;
+    height: 40px;
+    margin: 10px auto;
+    display: block;
+    outline: none;
+}
+
+a {
+    color: red;
+    font-size: 0.8rem;
+}
+
+a:hover {
+    color: #6BB7BE;
+}
+
+#si {
+    color: black;
+    font-size: 0.8rem;
+    margin-left: 105px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+#loginbtn {
+    border: none;
+    width: 300px;
+    height: 40px;
+    background-color: #6BB7BE;
+    margin: 20px auto;
+    display: block;
+    color: white;
+}
+
+#loginbtn:hover {
+    background-color: #E09A57;
+}
+
+#sign {
+    display: block;
+    text-align: center;
+    margin-top: 10px;
+}
+
+#sign > span {
+    font-size: 0.8rem;
+}
+
+h2 {
+    font-weight: bold;
+    text-align: right;
+    margin-right: 30px;
+    color: white;
+}
+
+#work {
+    width: 600px;
+    position: relative;
+    left: -69px;
+    top: 110px;
+}

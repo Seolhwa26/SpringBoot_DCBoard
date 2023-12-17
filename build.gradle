@@ -28,6 +28,8 @@ dependencies {
 	//implementation : 내부적으로만 사용, 사용자에게 의존성을 노출시키지 않음, 의존라이브러리를 수정해도 직접적으로 사용하는 모듈만 재빌드
 	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
 	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
+	//코드 변경 시 자동 재시작이 되도록 하는 초기설정
+	implementation 'org.springframework.boot:spring-boot-devtools'
 	//Restful을 포함한 웹 구축을 위한 스타터, Spring MVC를 사용하는 애플리케이션을 Tomcat을 기본 내장 컨테이너로 사용한다
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	implementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter:3.0.3'
@@ -40,6 +42,7 @@ dependencies {
 	testImplementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter-test:3.0.3'
 	implementation 'org.springframework.boot:spring-boot-starter-data-jdbc'
 	implementation group: 'org.mariadb.jdbc', name: 'mariadb-java-client', version: '2.4.1'
+	implementation group: 'nz.net.ultraq.thymeleaf', name: 'thymeleaf-layout-dialect', version: '2.5.2'
 }
 
 tasks.named('bootBuildImage') {

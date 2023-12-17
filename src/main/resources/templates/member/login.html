@@ -1,10 +1,62 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <!-- Basic -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- Mobile Metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <!-- Site Metas -->
+
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+
+    <title>DCBoard</title>
+    <!-- config.html -->
+    <th:block th:replace="fragments/config::configFragment"></th:block>
+    <link href="/css/login.css" rel="stylesheet">
 </head>
+
 <body>
 
+<div class="hero_area">
+    <!-- header section strats -->
+    <header th:replace="fragments/header::headerFragment"></header>
+    <!-- end header section -->
+    <!-- slider section -->
+    <section class="about_section layout_padding long_section">
+
+            <div id="c1">
+                <div id="left" class="loginform">
+                    <img src="/images/logo.png" id="loginlogo" alt="">
+                    <h1>Welcome Back</h1>
+                    <div><button type="button" id="kakao"><i class="fa-solid fa-comment" style="color: #3c1e1e;"></i>  카카오톡 로그인</button></div>
+                    <hr>
+                    <span class="in">Id</span>
+                    <div><input type="text" placeholder=" Id" class="in2"></div>
+                    <span class="in">Password</span>
+                    <div><input type="password" placeholder=" Password" class="in2"></div>
+                    <span id="si"><label><input type="checkbox"> Save ID</label></span>     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#">Forgot your password?</a>
+                    <div><input type="button" id="loginbtn" value="Log in"></div>
+                    <hr>
+                    <span id="sign"><span>Don't have an account?</span> &nbsp;<a href="#">Sign up</a></span>
+                </div>
+                <div id="right" class="loginform">
+                    <h2>LOGIN</h2>
+                    <img src="/images/work.png" id="work" alt="">
+
+                </div>
+            </div>
+    </section>
+    <!-- end slider section -->
+</div>
+
+<!-- footer section -->
+<foooter th:replace="fragments/footer::footerFragment"></foooter>
+<!-- footer section -->
+
 </body>
+
 </html>
