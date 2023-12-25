@@ -35,10 +35,19 @@
                         </ul>
                     </div>
                     <div class="quote_btn-container">
-                        <a href="">
-              <span>
-                Login
-              </span>
+
+                        <a th:if="${session.auth == null}" href="/member/login">
+                            <span>
+                                Login
+                            </span>
+
+                            <i class="fa fa-user" aria-hidden="true"></i>
+                        </a>
+                        <a th:if="${session.auth != null}" href="/member/logout">
+                            <span>
+                                Logout
+                            </span>
+
                             <i class="fa fa-user" aria-hidden="true"></i>
                         </a>
                         <form class="form-inline">
