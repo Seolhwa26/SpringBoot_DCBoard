@@ -32,14 +32,14 @@
                 <div id="left" class="loginform">
                     <img src="/images/logo.png" id="loginlogo" alt="">
                     <h1>Welcome Back</h1>
-                    <div><button type="button" id="kakao" onclick="location.href='https://kauth.kakao.com/oauth/authorize?client_id=441d0d374fba2be5a050c2911e0e3f0f&redirect_uri=http://localhost:8080/member/kakaoLogin&response_type=code&scope=profile_nickname profile_image account_email'"><i class="fa-solid fa-comment" style="color: #3c1e1e;"></i>  카카오톡 로그인</button></div>
+                    <div><button type="button" id="kakao" onclick="location.href='https://kauth.kakao.com/oauth/authorize?client_id=441d0d374fba2be5a050c2911e0e3f0f&redirect_uri=http://localhost:8080/member/kakaoLogin&response_type=code'"><i class="fa-solid fa-comment" style="color: #3c1e1e;"></i>  카카오톡 로그인</button></div>
                     <hr>
                     <form method="POST" action="/member/loginOk">
                     <span class="in">Id</span>
-                    <div><input type="text" placeholder="Id" name="id" class="in2" required></div>
+                    <div><input type="text" placeholder="Id" id="id" name="id" class="in2" required></div>
                     <span class="in">Password</span>
-                    <div><input type="password" placeholder="Password" name="pw" class="in2" required></div>
-                    <span id="si"><label><input type="checkbox"> Save ID</label></span>     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#">Forgot your password?</a>
+                    <div><input type="password" placeholder="Password" id="pw" name="pw" class="in2" required></div>
+                    <span id="si"><label><input type="checkbox" id="ch1" name="ch1"> Save ID</label></span>     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#">Forgot your password?</a>
                     <div><input type="submit" id="loginbtn" value="Log in"></div>
                     </form>
                     <hr>
@@ -58,6 +58,35 @@
 <!-- footer section -->
 <foooter th:replace="fragments/footer::footerFragment"></foooter>
 <!-- footer section -->
+
+<script>
+
+    const loginId = localStorage.getItem('id');
+
+    if(loginId!=null) {
+        $('#ch1').prop('checked', true);
+
+        $(document).ready(function() {
+            $('#id').val(loginId);
+        });
+
+        $('#pw').focus();
+    }
+
+    $('#loginbtn').click(function(){
+
+        if ($('#ch1').is(':checked')) {
+
+            let idval = document.getElementById('id').value;
+            console.log(idval);
+            localStorage.setItem('id', idval);
+
+        } else {
+            localStorage.removeItem('id');
+        }
+    });
+
+</script>
 
 </body>
 

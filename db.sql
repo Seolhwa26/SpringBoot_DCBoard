@@ -145,7 +145,7 @@ drop table tblAttend;
 delete from tblMember;
 
 -- tblMember
-INSERT INTO tblMember (mseq, name, tel, email, id, pw, lv, active, mfile) VALUES(1, '복준성', '010-4893-1952', 'rqlg274@icloud.com', 'pjar12', 'lbkl29&', 1, 'Y', 'default.jpg');
+INSERT INTO tblMember (mseq, name, tel, email, id, pw, lv, active, mfile) VALUES(1, '김설화', '010-6289-0859', 'tjfghkcjsrnr@naver.com', 'seol12', 'qwer12!'', 1, 'Y', 'default.jpg');
 INSERT INTO tblMember (mseq, name, tel, email, id, pw, lv, active, mfile) VALUES(2, '이형원', '010-1019-6313', 'ebhv660@gamil.com', 'nqis11', 'xxvl68&', 2, 'Y', 'member01.jpg');
 INSERT INTO tblMember (mseq, name, tel, email, id, pw, lv, active, mfile) VALUES(3, '고동우', '010-5480-5017', 'igvp682@outlook.com', 'texu47', 'bjdj73@', 3, 'Y', 'member02.jpg');
 INSERT INTO tblMember (mseq, name, tel, email, id, pw, lv, active, mfile) VALUES(4, '복현주', '010-2102-3243', 'ygbc790@ gamil.com', 'zbys26', 'itvd51@', 3, 'Y', 'default.jpg');
@@ -915,7 +915,7 @@ select * from tblAttend;
 
 
 
-
+commit;
 
 
 

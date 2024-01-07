@@ -9,6 +9,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpSession;
+import java.awt.*;
 import java.util.Collections;
 import java.util.HashMap;
 
@@ -33,17 +34,17 @@ public class memberController {
     public String loginOk(String id, String pw, HttpSession session, Model model) throws Exception {
 
         MemberDTO dto = service.loginCheck(id, pw);
-        System.out.println(dto);
-        String mseq = dto.getMseq();
 
-        if (dto.getActive().equals("Y")) {
+        if (dto != null && dto.getActive().equals("Y")) {
             //로그인 성공
+            String mseq = dto.getMseq();
+
             session.setAttribute("auth", id);
             session.setAttribute("mseq", mseq);
 
             return "redirect:/index";
         } else {
-            //로그인 성공
+            //로그인 실패
             return "redirect:/member/login";
         }
 
@@ -53,7 +54,6 @@ public class memberController {
     public String logout(HttpSession session) {
 
         session.removeAttribute("auth");
-        session.removeAttribute("mseq");
 
         return "redirect:/index";
     }
@@ -63,7 +63,7 @@ public class memberController {
         String access_token = memberService.getKakaoAccessToken(code);
 
         HashMap<String, Object> memberKakaoInfo = memberService.kakaoMember(access_token);
-        //System.out.println("login Controller : " + memberKakaoInfo);
+        System.out.println("login Controller : " + memberKakaoInfo);
 
         //클라이언트의 이메일이 존재할 때 세션에 해당 이메일과 토큰 등록
         if (memberKakaoInfo.get("email") != null) {

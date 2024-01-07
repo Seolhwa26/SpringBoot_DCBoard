@@ -106,7 +106,10 @@ public class memberService {
             while ((line = br.readLine()) != null) {
                 result += line;
             }
-            //System.out.println("response body : " + result);
+            
+            //로그인 정보 출력
+            //response body : {"id":3260936233,"connected_at":"2024-01-07T14:43:04Z","properties":{"nickname":"김설화","profile_image":"http://k.kakaocdn.net/dn/1G9kp/btsAot8liOn/8CWudi3uy07rvFNUkk3ER0/img_640x640.jpg","thumbnail_image":"http://k.kakaocdn.net/dn/1G9kp/btsAot8liOn/8CWudi3uy07rvFNUkk3ER0/img_110x110.jpg"},"kakao_account":{"profile_nickname_needs_agreement":false,"profile_image_needs_agreement":false,"profile":{"nickname":"김설화","thumbnail_image_url":"http://k.kakaocdn.net/dn/1G9kp/btsAot8liOn/8CWudi3uy07rvFNUkk3ER0/img_110x110.jpg","profile_image_url":"http://k.kakaocdn.net/dn/1G9kp/btsAot8liOn/8CWudi3uy07rvFNUkk3ER0/img_640x640.jpg","is_default_image":true},"has_email":true,"email_needs_agreement":false,"is_email_valid":true,"is_email_verified":true,"email":"tjfghkcjsrnr@naver.com"}}
+            System.out.println("response body : " + result);
 
             //Gson 라이브러리로 JSON파싱
             JsonParser parser = new JsonParser();
@@ -121,8 +124,8 @@ public class memberService {
             memberKakaoInfo.put("nickname", nickname);
             memberKakaoInfo.put("email", email);
 
-            //System.out.println("nickname : " + nickname);
-            //System.out.println("email : " + email);
+            System.out.println("nickname : " + nickname);
+            System.out.println("email : " + email);
 
             br.close();
 
