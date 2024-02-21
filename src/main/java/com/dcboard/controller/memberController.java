@@ -30,6 +30,7 @@ public class memberController {
 
         return "member/login";
     }
+    
     @PostMapping("/member/loginOk")
     public String loginOk(String id, String pw, HttpSession session, Model model) throws Exception {
 
@@ -87,6 +88,12 @@ public class memberController {
             System.out.println("access_Token is null");
         }
         return "redirect:/index";
+    }
+    
+    @GetMapping("/member/findIdPw")
+    public String findIdPw() {
+
+        return "member/findIdPw";
     }
 
     @GetMapping("/about")

@@ -1,10 +1,88 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+<!-- Basic -->
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<!-- Mobile Metas -->
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+<!-- Site Metas -->
+
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<meta name="author" content="" />
+
+<title>DCBoard</title>
+<!-- config.html -->
+<th:block th:replace="fragments/config::configFragment"></th:block>
+<link href="/css/login.css" rel="stylesheet">
 </head>
+
 <body>
 
+	<div class="hero_area">
+		<!-- header section strats -->
+		<header th:replace="fragments/header::headerFragment"></header>
+		<!-- end header section -->
+		<!-- slider section -->
+		<section class="about_section layout_padding long_section">
+
+			<div id="c1">
+				<div id="left" class="loginform">
+					<img src="/images/logo.png" id="loginlogo" alt="">
+					<h1>ID/PW 찾기</h1>
+					<input type="button" id="checkId" value="아이디">
+					<input type="button" id="checkPw" value="비밀번호">
+					<div></div>
+
+					<form method="POST" action="/member/loginOk">
+						<span class="in">이름</span>
+						<div>
+							<input type="text" placeholder="이름" id="name" name="name"
+								class="in2" required>
+						</div>
+						<span class="in">휴대전화</span>
+
+						<div>
+							<select name="번호">
+								<option value="010" selected="selected">010</option>
+								<option value="011">011</option>
+								<option value="016">016</option>
+								<option value="017">017</option>
+								<option value="018">018</option>
+								<option value="019">019</option>
+							</select> - <input type="tel" size="2"> - <input type="tel"
+								size="2">
+						</div>
+
+						<div>
+							<input type="submit" id="loginbtn" value="확인">
+						</div>
+					</form>
+					<hr>
+					<span id="sign"><span>Don't have an account?</span> &nbsp;<a
+						href="#">Sign up</a></span>
+				</div>
+				<div id="right" class="loginform">
+					<h2>Find ID or PW</h2>
+					<img src="/images/work.png" id="work" alt="">
+
+				</div>
+			</div>
+		</section>
+		<!-- end slider section -->
+	</div>
+
+	<!-- footer section -->
+	<foooter th:replace="fragments/footer::footerFragment"></foooter>
+	<!-- footer section -->
+
+	<script>
+
+</script>
+
 </body>
+
 </html>
