@@ -6,7 +6,7 @@
     box-shadow: -10px 10px 20px -10px gray;
 }
 
-.loginform {
+.findform {
     width: 550px;
     height: 675px;
     background-color: white;
@@ -35,39 +35,71 @@ h1 {
     font-weight: bold;
 }
 
-#kakao {
-    border: none;
-    outline: none;
-    box-shadow: 5px 5px 5px #ced4da;
-    width: 300px;
-    height: 40px;
-    background-color: #FAE100;
-    margin: 40px auto;
-    margin-top: 50px;
-    display: block;
+#btns {
+	display: flex;
+	width: 300px;
+	height: 40px;
+	text-align: center;
+	margin: 0 auto;
+	margin-top: 40px;
 }
 
-#kakao:hover {
-    background-color: #E9DC03;
+.btnTitle {
+	outline: 0;
+	border: 1px solid black;
+	background-color: white;
+	padding: 0;
+	width: 100%;
 }
 
-.in {
+#btnId {
+	background-color: white;
+}
+
+#btnId:hover {
+	background-color: black;
+	color: white;
+}
+
+#btnId:hover ~ #btnPw {
+	background-color: white;
+	color: black;
+}
+
+#btnPw {
+	background-color: black;
+	color: white;
+}
+
+#btnPw:hover {
+	background-color: white;
+	color: black;
+}
+
+#btnPw:hover #btnId:not(:hover) {
+	background-color: black;
+	color: white;
+}
+
+#underline {
+	width: 300px;
+	height: 3px;
+	margin: 0 auto;
+	background-color: black;
+	margin-bottom: 20px;
+}
+
+.name {
     font-size: 1rem;
     margin: 5px 0 5px 105px;
 }
 
-.in2 {
-    width: 300px;
+.name2 {
+    width: 250px;
     height: 40px;
     margin: 10px auto;
     padding-left: 8px;
-    display: block;
     outline: none;
-}
-
-#si {
-    font-size: 0.8rem;
-    margin: 5px 0 5px 105px;
 }
 
 a {
@@ -94,13 +126,13 @@ a:hover {
     background-color: #E09A57;
 }
 
-#sign {
+#login {
     display: block;
     text-align: center;
     margin-top: 10px;
 }
 
-#sign > span {
+#login > span {
     font-size: 0.8rem;
 }
 
@@ -116,4 +148,4 @@ h2 {
     position: relative;
     left: -69px;
     top: 110px;
-}
+} 

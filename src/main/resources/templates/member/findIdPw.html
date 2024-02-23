@@ -17,7 +17,7 @@
 <title>DCBoard</title>
 <!-- config.html -->
 <th:block th:replace="fragments/config::configFragment"></th:block>
-<link href="/css/login.css" rel="stylesheet">
+<link href="/css/findIdPw.css" rel="stylesheet">
 </head>
 
 <body>
@@ -30,41 +30,53 @@
 		<section class="about_section layout_padding long_section">
 
 			<div id="c1">
-				<div id="left" class="loginform">
-					<img src="/images/logo.png" id="loginlogo" alt="">
+				<div id="left" class="findform">
+					<img src="/images/logo.png" id="mainlogo" alt="">
 					<h1>ID/PW 찾기</h1>
-					<input type="button" id="checkId" value="아이디">
-					<input type="button" id="checkPw" value="비밀번호">
-					<div></div>
+					
+					<div id="btns">
+						<input type="button" id="btnId" class="btnTitle" value="아이디">
+						<input type="button" id="btnPw" class="btnTitle" value="비밀번호">
+					</div>
+					<div id="underline"></div>
 
 					<form method="POST" action="/member/loginOk">
-						<span class="in">이름</span>
-						<div>
-							<input type="text" placeholder="이름" id="name" name="name"
-								class="in2" required>
-						</div>
-						<span class="in">휴대전화</span>
-
-						<div>
-							<select name="번호">
+					
+						<div id="idBox">
+						
+							<div id="title">등록된 휴대폰 번호로 찾기</div>
+							<div id="content">가입 당시 입력한 휴대전화 번호를 입력해주세요.</div>
+					
+							<span class="name">이름</span> 
+							<input type="text" placeholder="이름" id="name" name="name" class="name2" required> 
+						
+							<span class="name">휴대전화</span>
+							<select name="tel1">
 								<option value="010" selected="selected">010</option>
 								<option value="011">011</option>
 								<option value="016">016</option>
 								<option value="017">017</option>
 								<option value="018">018</option>
 								<option value="019">019</option>
-							</select> - <input type="tel" size="2"> - <input type="tel"
-								size="2">
+							</select> - 
+						
+							<input type="tel" name="tel2" size="2"> - 
+							<input type="tel" name="tel3" size="2">
 						</div>
-
+						
+						
 						<div>
 							<input type="submit" id="loginbtn" value="확인">
 						</div>
+						
+						<input type="hidden" value="hi" name="title">
+						
 					</form>
+					
 					<hr>
-					<span id="sign"><span>Return to the DCBoard account?</span> &nbsp;<a href="#">Log In</a></span>
+					<span id="login"><span>Return to the DCBoard account?</span> &nbsp;<a href="#">Log In</a></span>
 				</div>
-				<div id="right" class="loginform">
+				<div id="right" class="findform">
 					<h2>Find ID or PW</h2>
 					<img src="/images/work.png" id="work" alt="">
 
