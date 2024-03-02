@@ -36,21 +36,21 @@ h1 {
 }
 
 #btns {
-	width: 300px;
-	height: 40px;
+	width: 412px;
+	height: 45px;
 	text-align: center;
 	margin: 0 auto;
-	margin-top: 40px;
+	margin-top: 30px;
 	display: table;
 	border-collapse: collapse;
 }
 
 .btnTitle {
 	outline: 0;
-	border: 1px solid black;
+	border: 1px solid gray;
 	display: table-cell;
-	width: 150px;
-	height: 40px;
+	width: 206px;
+	height: 45px;
 }
 
 #btnId, #btnPw {
@@ -60,38 +60,162 @@ h1 {
 	height: 100%;
 	background-color: white;
 	color: black;
+	font-size: 14.5px;
+	font-weight: bold;
 }
 
 #btnId:hover, #btnPw:hover {
-	background-color: black;
+	background-color: #E09A57;
 	color: white;
 }
 
 /* 이건 디자인용 > 기능구현시 지워야함 */
-#btnPw {
-	background-color: black;
+#btnId {
+	background-color: #6BB7BE;
 	color: white;
 }
 
 #underline {
-	width: 300px;
+	width: 412px;
 	height: 3px;
 	margin: 0 auto;
-	background-color: black;
+	background-color: #6BB7BE;
 	margin-bottom: 20px;
 }
 
+#idBox, #pwBox {
+	width: 412px;
+	margin: 0 auto;
+}
+
+#pwBox {
+	display: none;
+}   
+
+.title {
+	font-size: 15px;
+	font-weight: bold;
+}
+
+.content {
+	font-size: 13.5px;
+	font-weight: bold;
+	margin-top: 2px;
+	margin-bottom: 7px;
+}
+
 .name {
-    font-size: 1rem;
-    margin: 5px 0 5px 105px;
+	display: inline-block;
+	width: 59px;
+    font-size: 14.5px;
+    margin: 5px 0;
+
 }
 
 .name2 {
-    width: 250px;
+    width: 343px;
     height: 40px;
-    margin: 10px auto;
+    margin: 5px 0;
+    margin-left: 5px;
+    padding-left: 8px;
+    font-size: 14.5px;
+    outline: none;
+}
+
+select {
+	width: 78px;
+    height: 40px;
+    margin-top: 5px;
+    margin-left: 5px;
+    text-align: center;
+    font-size: 14.5px;
+    outline: none;
+}
+
+.line {
+	margin: 0 10px;
+}
+
+input[type=tel] {
+	width: 95px;
+	height: 40px;
+    margin-top: 10px;
+    outline: none;
+    font-size: 14.5px;
+    text-align: center;
+}
+
+#inputId {
+	width: 412px;
+	height: 40px;
+    margin: 5px 0;
     padding-left: 8px;
     outline: none;
+    font-size: 14.5px;
+}
+
+#inputEmail {
+	width: 100px;
+	font-size: 14.5px;
+}
+
+#emailline {
+	margin: 0 2.5px;
+}
+
+#inputEmail2 {
+	width: 95px;
+	height: 40px;
+    margin: 5px 0;
+    padding-left: 8px;
+    outline: none;
+    font-size: 14.5px;
+}
+
+#emailAddress {
+	width: 20px;
+	margin-right: 5px;
+	text-align: center;
+}
+
+#authentication {
+	border: none;
+	outline: 0;
+	width: 80px;
+	height: 40px;
+	font-size: 13px;
+	font-weight: bold;
+	background-color: #6BB7BE;
+	color: white;
+}
+
+#authentication:hover {
+	background-color: #E09A57;
+	color: white;
+}
+
+#message {
+	font-size: 12px;
+	font-weight: bold;
+	margin-left: 68px;
+}
+
+#checkBtn {
+    border: none;
+    outline: none;
+    width: 412px;
+    height: 45px;
+    background-color: #6BB7BE;
+    margin: 10px auto;
+    margin-top: 20px;
+    display: block;
+    color: white;
+    font-size: 14.5px;
+	font-weight: bold;
+}
+
+#checkBtn:hover {
+    background-color: #E09A57;
 }
 
 a {
@@ -101,21 +225,6 @@ a {
 
 a:hover {
     color: #6BB7BE;
-}
-
-#loginbtn {
-    border: none;
-    outline: none;
-    width: 300px;
-    height: 40px;
-    background-color: #6BB7BE;
-    margin: 20px auto;
-    display: block;
-    color: white;
-}
-
-#loginbtn:hover {
-    background-color: #E09A57;
 }
 
 #login {
@@ -136,8 +245,8 @@ h2 {
 }
 
 #work {
-    width: 600px;
+    width: 550px;
     position: relative;
-    left: -69px;
-    top: 110px;
+    left: -20px;
+    top: 120px;
 } 

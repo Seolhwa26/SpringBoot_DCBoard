@@ -44,11 +44,11 @@
 					
 						<div id="idBox">
 						
-							<div id="title">등록된 휴대폰 번호로 찾기</div>
-							<div id="content">가입 당시 입력한 휴대전화 번호를 입력해주세요.</div>
+							<div class="title">등록된 휴대폰 번호로 찾기</div>
+							<div class="content">가입 당시 입력한 휴대전화 번호를 입력해주세요.</div>
 					
 							<span class="name">이름</span> 
-							<input type="text" placeholder="이름" id="name" name="name" class="name2" required> 
+							<input type="text" placeholder="이름" id="idname" name="name" class="name2" required> 
 						
 							<span class="name">휴대전화</span>
 							<select name="tel1">
@@ -58,15 +58,44 @@
 								<option value="017">017</option>
 								<option value="018">018</option>
 								<option value="019">019</option>
-							</select> - 
+							</select> <span class="line">-</span> 
 						
-							<input type="tel" name="tel2" size="2"> - 
-							<input type="tel" name="tel3" size="2">
+							<input type="tel" name="tel2" required> <span class="line">-</span> 
+							<input type="tel" name="tel3" required>
+						</div>
+						
+						<div id="pwBox">
+						
+							<div class="title">등록된 이메일로 찾기</div>
+							<div class="content">가입 당시 입력한 이메일을 통해 인증 후 새비밀번호를 등록해주세요.</div>
+					
+							<input type="text" placeholder="가입된 아이디 입력" id="inputId" name="id" required>  
+						
+							<span class="name">이름</span> 
+							<input type="text" placeholder="이름" id="pwname" name="name" class="name2" required> 
+						
+							<span class="name">이메일</span>
+							<input type="text" name="email1" id=inputEmail class="name2" placeholder="이메일" required> <span id="emailline">@</span> 
+							<input type="text" name="email1" id=inputEmail2 placeholder="주소 입력">
+							<select name="email" id="emailAddress">
+								<option value="" disabled selected>선택</option>
+								<option value="naver.com">naver.com</option>
+								<option value="naver.com">daum.net</option>
+								<option value="hanmail.com">hanmail.com</option>
+								<option value="gmail.com">gmail.com</option>
+								<option value="nate.com">nate.com</option>
+								<option value="directly">직접 입력하기</option>
+							</select> 
+							<input type="button" id="authentication" value="인증번호">
+						
+							<span class="name">인증번호</span> 
+							<input type="text" placeholder="인증번호 6자리 숫자 입력" id="idname" name="name" class="name2" required> 
+							<div id="message">인증번호를 입력해주세요.</div>
 						</div>
 						
 						
 						<div>
-							<input type="submit" id="loginbtn" value="확인">
+							<input type="submit" id="checkBtn" value="확인">
 						</div>
 						
 						<input type="hidden" value="hi" name="title">
@@ -78,7 +107,7 @@
 				</div>
 				<div id="right" class="findform">
 					<h2>Find ID or PW</h2>
-					<img src="/images/work.png" id="work" alt="">
+					<img src="/images/workman.png" id="work" alt="">
 
 				</div>
 			</div>
