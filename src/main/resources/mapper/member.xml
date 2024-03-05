@@ -7,5 +7,9 @@
     <select id="loginCheck" parameterType="String" resultType="com.dcboard.model.member.MemberDTO">
         select * from tblMember where id = #{id} and pw = #{pw}
     </select>
+    
+    <select id="findId" parameterType="com.dcboard.model.member.Member" resultType="String">
+    	select id from tblMember where name = #{name} and tel = #{tel}
+    </select>
 
 </mapper>

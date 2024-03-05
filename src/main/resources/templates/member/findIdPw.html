@@ -40,15 +40,15 @@
 					</div>
 					<div id="underline"></div>
 
-					<form method="POST" action="/member/loginOk">
+					<form method="POST" action="/member/findIdPwOk">
 					
 						<div id="idBox">
-						
+							
 							<div class="title">등록된 휴대폰 번호로 찾기</div>
 							<div class="content">가입 당시 입력한 휴대전화 번호를 입력해주세요.</div>
 					
 							<span class="name">이름</span> 
-							<input type="text" placeholder="이름" id="idname" name="name" class="name2" required> 
+							<input type="text" placeholder="이름" id="idname" name="idname" class="name2" required> 
 						
 							<span class="name">휴대전화</span>
 							<select name="tel1">
@@ -69,15 +69,15 @@
 							<div class="title">등록된 이메일로 찾기</div>
 							<div class="content">가입 당시 입력한 이메일을 통해 인증 후 새비밀번호를 등록해주세요.</div>
 					
-							<input type="text" placeholder="가입된 아이디 입력" id="inputId" name="id" required>  
+							<input type="text" placeholder="가입된 아이디 입력" id="inputId" name="id">  
 						
 							<span class="name">이름</span> 
-							<input type="text" placeholder="이름" id="pwname" name="name" class="name2" required> 
+							<input type="text" placeholder="이름" id="pwname" name="pwname" class="name2"> 
 						
 							<span class="name">이메일</span>
-							<input type="text" name="email1" id=inputEmail class="name2" placeholder="이메일" required> <span id="emailline">@</span> 
-							<input type="text" name="email1" id=inputEmail2 placeholder="주소 입력">
-							<select name="email" id="emailAddress">
+							<input type="text" name="email1" id=email1 class="name2" placeholder="이메일"> <span id="emailline">@</span> 
+							<input type="text" name="email2" id=email2 placeholder="주소 입력">
+							<select name="email3" id="email3">
 								<option value="" disabled selected>선택</option>
 								<option value="naver.com">naver.com</option>
 								<option value="naver.com">daum.net</option>
@@ -89,7 +89,7 @@
 							<input type="button" id="authentication" value="인증번호">
 						
 							<span class="name">인증번호</span> 
-							<input type="text" placeholder="인증번호 6자리 숫자 입력" id="idname" name="name" class="name2" required> 
+							<input type="text" placeholder="인증번호 6자리 숫자 입력" id="authentication" name="authentication" class="name2"> 
 							<div id="message">인증번호를 입력해주세요.</div>
 						</div>
 						
@@ -98,12 +98,12 @@
 							<input type="submit" id="checkBtn" value="확인">
 						</div>
 						
-						<input type="hidden" value="hi" name="title">
+						<input type="hidden" value="btnId" name="title">
 						
 					</form>
 					
 					<hr>
-					<span id="login"><span>Return to the DCBoard account?</span> &nbsp;<a href="#">Log In</a></span>
+					<span id="login"><span>Return to the DCBoard account?</span> &nbsp;<a href="/member/login">Log In</a></span>
 				</div>
 				<div id="right" class="findform">
 					<h2>Find ID or PW</h2>
@@ -121,7 +121,18 @@
 
 	<script>
 
-</script>
+		var id = "[[${id}]]";
+		
+		if (id) {
+			if (id == '널') {
+				alert('입력하신 정보와 일치하는 아이디가 없습니다.');
+			} else {
+				alert('입력하신 정보와 일치하는 아이디는 \'' + id + '\'입니다.');
+			}
+			window.location.replace("http://localhost:8080/member/findIdPw"); 
+		}
+	
+	</script>
 
 </body>
 

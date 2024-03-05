@@ -1,6 +1,7 @@
 package com.dcboard.service;
 
 import com.dcboard.mapper.memberMapper;
+import com.dcboard.model.member.Member;
 import com.dcboard.model.member.MemberDTO;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
@@ -20,6 +21,7 @@ public class memberService {
     private final memberMapper memberMapper;
 
     public MemberDTO loginCheck(String id, String pw) {
+    	
         return memberMapper.loginCheck(id, pw);
     }
 
@@ -163,6 +165,11 @@ public class memberService {
             e.printStackTrace();
         }
     }
+
+	public String findId(Member member) {
+
+		return memberMapper.findId(member);
+	}
 
 
 }

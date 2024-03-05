@@ -1,6 +1,8 @@
 package com.dcboard.controller;
 
 import ch.qos.logback.core.net.SyslogOutputStream;
+
+import com.dcboard.model.member.Member;
 import com.dcboard.model.member.MemberDTO;
 import com.dcboard.service.memberService;
 import lombok.RequiredArgsConstructor;
@@ -8,6 +10,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import java.awt.*;
 import java.util.Collections;
@@ -32,7 +35,7 @@ public class memberController {
     }
     
     @PostMapping("/member/loginOk")
-    public String loginOk(String id, String pw, HttpSession session, Model model) throws Exception {
+    public String loginOk(String id, String pw, HttpSession session, Model model) {
 
         MemberDTO dto = service.loginCheck(id, pw);
 
@@ -94,6 +97,27 @@ public class memberController {
     public String findIdPw() {
 
         return "member/findIdPw";
+    }
+    
+    @PostMapping("/member/findIdPwOk")
+    public String findIdPwOk(String title, String idname, String tel1, String tel2, String tel3, Model model) {
+    	
+    	//id 찾기
+    	String tel = tel1 + "-" + tel2 + "-" + tel3;
+    	
+    	Member member = new Member();
+    	
+    	member.setName(idname);
+    	member.setTel(tel);
+    	
+    	String id = service.findId(member);
+    	
+    	id = (id == null) ? "널" : id;
+    	
+    	model.addAttribute("id", id);
+    	
+    	return "/member/findIdPw";
+	
     }
 
     @GetMapping("/about")
