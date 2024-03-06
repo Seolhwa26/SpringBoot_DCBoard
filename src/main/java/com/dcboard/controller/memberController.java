@@ -102,19 +102,24 @@ public class memberController {
     @PostMapping("/member/findIdPwOk")
     public String findIdPwOk(String title, String idname, String tel1, String tel2, String tel3, Model model) {
     	
-    	//id 찾기
-    	String tel = tel1 + "-" + tel2 + "-" + tel3;
-    	
-    	Member member = new Member();
-    	
-    	member.setName(idname);
-    	member.setTel(tel);
-    	
-    	String id = service.findId(member);
-    	
-    	id = (id == null) ? "널" : id;
-    	
-    	model.addAttribute("id", id);
+    	if (title.equals("btnId")) {
+    		
+    		String tel = tel1 + "-" + tel2 + "-" + tel3;
+    		
+    		Member member = new Member();
+    		
+    		member.setName(idname);
+    		member.setTel(tel);
+    		
+    		String id = service.findId(member);
+    		
+    		id = (id == null) ? "널" : id;
+    		
+    		model.addAttribute("id", id);
+    		
+    	} else {
+    		
+    	}
     	
     	return "/member/findIdPw";
 	

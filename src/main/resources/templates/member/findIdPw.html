@@ -60,8 +60,8 @@
 								<option value="019">019</option>
 							</select> <span class="line">-</span> 
 						
-							<input type="tel" name="tel2" required> <span class="line">-</span> 
-							<input type="tel" name="tel3" required>
+							<input type="tel" id="tel2" name="tel2" required> <span class="line">-</span> 
+							<input type="tel" id="tel3" name="tel3" required>
 						</div>
 						
 						<div id="pwBox">
@@ -69,7 +69,7 @@
 							<div class="title">등록된 이메일로 찾기</div>
 							<div class="content">가입 당시 입력한 이메일을 통해 인증 후 새비밀번호를 등록해주세요.</div>
 					
-							<input type="text" placeholder="가입된 아이디 입력" id="inputId" name="id">  
+							<input type="text" placeholder="가입된 아이디 입력" id="inputId" name="inputId">  
 						
 							<span class="name">이름</span> 
 							<input type="text" placeholder="이름" id="pwname" name="pwname" class="name2"> 
@@ -78,15 +78,15 @@
 							<input type="text" name="email1" id=email1 class="name2" placeholder="이메일"> <span id="emailline">@</span> 
 							<input type="text" name="email2" id=email2 placeholder="주소 입력">
 							<select name="email3" id="email3">
-								<option value="" disabled selected>선택</option>
+								<option value="" disabled>선택</option>
 								<option value="naver.com">naver.com</option>
-								<option value="naver.com">daum.net</option>
+								<option value="daum.net">daum.net</option>
 								<option value="hanmail.com">hanmail.com</option>
 								<option value="gmail.com">gmail.com</option>
 								<option value="nate.com">nate.com</option>
-								<option value="directly">직접 입력하기</option>
+								<option value="write" selected>직접 입력하기</option>
 							</select> 
-							<input type="button" id="authentication" value="인증번호">
+							<input type="button" id="btnAuthentication" value="인증번호">
 						
 							<span class="name">인증번호</span> 
 							<input type="text" placeholder="인증번호 6자리 숫자 입력" id="authentication" name="authentication" class="name2"> 
@@ -98,7 +98,7 @@
 							<input type="submit" id="checkBtn" value="확인">
 						</div>
 						
-						<input type="hidden" value="btnId" name="title">
+						<input type="hidden" value="btnId" id="title" name="title">
 						
 					</form>
 					
@@ -131,7 +131,85 @@
 			}
 			window.location.replace("http://localhost:8080/member/findIdPw"); 
 		}
+		
+		var idBcolor = $('#btnId').css("background-color");
+		var idColor = $('#btnId').css("color");
+		var pwBcolor = $('#btnPw').css("background-color");
+		var pwColor = $('#btnPw').css("color");
+		
+		$('#btnId').hover(function() {
+			$('#btnId').css({"background-color":"#E09A57", "color":"white"});
+		}, function(){
+			$('#btnId').css({"background-color":idBcolor, "color":idColor});
+		});
+		
+		$('#btnPw').hover(function() {
+			$('#btnPw').css({"background-color":"#E09A57", "color":"white"});
+		}, function(){
+			$('#btnPw').css({"background-color":pwBcolor, "color":pwColor});
+		});
 	
+		$('#btnId').click(function() {
+			$('#idBox').show();
+			$('#pwBox').hide();
+			$('#btnId').css({"background-color":"#6BB7BE", "color": "white"});
+			$('#btnPw').css({"background-color":"white", "color": "black"});
+			
+			$('#idname').attr("required", true);
+			$('#tel2').attr("required", true);
+			$('#tel3').attr("required", true);
+			
+			$('#inputId').attr("required", false);
+			$('#pwname').attr("required", false);
+			$('#email1').attr("required", false);
+			$('#email2').attr("required", false);
+			$('#authentication').attr("required", false);
+			
+			$('#title').val("btnId");
+			
+			idBcolor = $('#btnId').css("background-color");
+			idColor = $('#btnId').css("color");
+			pwBcolor = $('#btnPw').css("background-color");
+			pwColor = $('#btnPw').css("color");
+		});
+		
+		$('#btnPw').click(function() {
+			$('#idBox').hide();
+			$('#pwBox').show();
+			$('#btnId').css({"background-color":"white", "color": "black"});
+			$('#btnPw').css({"background-color":"#6BB7BE", "color": "white"});
+			
+			$('#idname').attr("required", false);
+			$('#tel2').attr("required", false);
+			$('#tel3').attr("required", false);
+			
+			$('#inputId').attr("required", true);
+			$('#pwname').attr("required", true);
+			$('#email1').attr("required", true);
+			$('#email2').attr("required", true);
+			$('#authentication').attr("required", true);
+			
+			$('#title').val("btnPw");
+			
+			idBcolor = $('#btnId').css("background-color");
+			idColor = $('#btnId').css("color");
+			pwBcolor = $('#btnPw').css("background-color");
+			pwColor = $('#btnPw').css("color");
+		});
+		
+		$('#email3').change(function() {
+			var emailAddress = $(this).val();
+			$('#email2').val(emailAddress);
+			if (emailAddress=='write') {
+				$('#email2').attr("disabled", false);
+				$('#email2').val("");
+				$('#email2').focus();
+			} else {
+				$('#email2').attr("disabled", true);
+			}
+			
+		});
+		
 	</script>
 
 </body>

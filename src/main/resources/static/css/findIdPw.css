@@ -69,7 +69,6 @@ h1 {
 	color: white;
 }
 
-/* 이건 디자인용 > 기능구현시 지워야함 */
 #btnId {
 	background-color: #6BB7BE;
 	color: white;
@@ -178,7 +177,7 @@ input[type=tel] {
 	text-align: center;
 }
 
-#authentication {
+#btnAuthentication {
 	border: none;
 	outline: 0;
 	width: 80px;
@@ -189,7 +188,7 @@ input[type=tel] {
 	color: white;
 }
 
-#authentication:hover {
+#btnAuthentication:hover {
 	background-color: #E09A57;
 	color: white;
 }
