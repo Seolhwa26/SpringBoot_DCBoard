@@ -194,6 +194,7 @@
 			idColor = $('#btnId').css("color");
 			pwBcolor = $('#btnPw').css("background-color");
 			pwColor = $('#btnPw').css("color");
+
 		});
 		
 		$('#email3').change(function() {
@@ -209,6 +210,15 @@
 			
 		});
 		
+		$('#checkBtn').click(function() {
+			if ($('#subject').val() === 'btnPw') {
+				if ($('#message').text() !== '인증이 완료되었습니다.') {
+					alert ('인증번호를 확인해주세요.');
+					return false;
+				}
+			}
+		});
+	
 		
 	</script>
 

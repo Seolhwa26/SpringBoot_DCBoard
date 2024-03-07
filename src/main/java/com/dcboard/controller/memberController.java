@@ -134,7 +134,7 @@ public class memberController {
     		member.setEmail(email);
     		member.setAuthentication(authentication);
     		
-    		String mseq = service.findPw(member);
+    		//String mseq = service.findPw(member);
     		
     	}
     	
