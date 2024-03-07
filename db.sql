@@ -913,7 +913,7 @@ select * from tblApply;
 select * from tblAttend;
 
 
-
+select id from tblMember where name = '김설화' and tel ='010-6289-0859';
 
 commit;
 
