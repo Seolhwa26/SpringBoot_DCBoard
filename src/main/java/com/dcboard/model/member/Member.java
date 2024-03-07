@@ -11,6 +11,8 @@ public class Member {
 	private String lv;
 	private String active;
 	private String mfile;
+	private String authentication;
+	private String checkAuthentication;
 	
 	
 	public String getMseq() {
@@ -66,6 +68,18 @@ public class Member {
 	}
 	public void setMfile(String mfile) {
 		this.mfile = mfile;
+	}
+	public String getAuthentication() {
+		return authentication;
+	}
+	public void setAuthentication(String authentication) {
+		this.authentication = authentication;
+	}
+	public String getCheckAuthentication() {
+		return checkAuthentication;
+	}
+	public void setCheckAuthentication(String checkAuthentication) {
+		this.checkAuthentication = checkAuthentication;
 	}
 
 }

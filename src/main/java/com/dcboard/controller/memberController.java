@@ -100,9 +100,9 @@ public class memberController {
     }
     
     @PostMapping("/member/findIdPwOk")
-    public String findIdPwOk(String title, String idname, String tel1, String tel2, String tel3, Model model) {
+    public String findIdPwOk(String subject, String idname, String tel1, String tel2, String tel3, String inputId, String pwname, String email1, String email2, String email3, String authentication, Model model) {
     	
-    	if (title.equals("btnId")) {
+    	if (subject.equals("btnId")) {
     		
     		String tel = tel1 + "-" + tel2 + "-" + tel3;
     		
@@ -118,6 +118,23 @@ public class memberController {
     		model.addAttribute("id", id);
     		
     	} else {
+    		System.out.println(inputId + " " + pwname + " " + email1 + " " + email2 + " " + email3 + " " + authentication);
+    	
+    		String email = "";
+    		if (email3.equals("write"))	{
+    			email = email1 + "@" + email2;
+    		} else {
+    			email = email1 + "@" + email3;
+    		}
+    		
+    		Member member = new Member();
+    		
+    		member.setId(inputId);
+    		member.setName(pwname);
+    		member.setEmail(email);
+    		member.setAuthentication(authentication);
+    		
+    		String mseq = service.findPw(member);
     		
     	}
     	

@@ -93,12 +93,11 @@
 							<div id="message">인증번호를 입력해주세요.</div>
 						</div>
 						
-						
 						<div>
 							<input type="submit" id="checkBtn" value="확인">
 						</div>
 						
-						<input type="hidden" value="btnId" id="title" name="title">
+						<input type="hidden" id="subject" name="subject" value="btnId">
 						
 					</form>
 					
@@ -165,7 +164,7 @@
 			$('#email2').attr("required", false);
 			$('#authentication').attr("required", false);
 			
-			$('#title').val("btnId");
+			$('#subject').val("btnId");
 			
 			idBcolor = $('#btnId').css("background-color");
 			idColor = $('#btnId').css("color");
@@ -189,7 +188,7 @@
 			$('#email2').attr("required", true);
 			$('#authentication').attr("required", true);
 			
-			$('#title').val("btnPw");
+			$('#subject').val("btnPw");
 			
 			idBcolor = $('#btnId').css("background-color");
 			idColor = $('#btnId').css("color");
@@ -209,6 +208,7 @@
 			}
 			
 		});
+		
 		
 	</script>
 
