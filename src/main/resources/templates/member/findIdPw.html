@@ -120,7 +120,7 @@
 
 	<script>
 
-		var id = "[[${id}]]";
+		const id = "[[${id}]]";
 		
 		if (id) {
 			if (id == '널') {
@@ -131,10 +131,10 @@
 			window.location.replace("http://localhost:8080/member/findIdPw"); 
 		}
 		
-		var idBcolor = $('#btnId').css("background-color");
-		var idColor = $('#btnId').css("color");
-		var pwBcolor = $('#btnPw').css("background-color");
-		var pwColor = $('#btnPw').css("color");
+		let idBcolor = $('#btnId').css("background-color");
+		let idColor = $('#btnId').css("color");
+		let pwBcolor = $('#btnPw').css("background-color");
+		let pwColor = $('#btnPw').css("color");
 		
 		$('#btnId').hover(function() {
 			$('#btnId').css({"background-color":"#E09A57", "color":"white"});
@@ -198,7 +198,7 @@
 		});
 		
 		$('#email3').change(function() {
-			var emailAddress = $(this).val();
+			const emailAddress = $(this).val();
 			$('#email2').val(emailAddress);
 			if (emailAddress=='write') {
 				$('#email2').attr("disabled", false);
